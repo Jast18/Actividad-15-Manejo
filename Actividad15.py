@@ -68,3 +68,38 @@ class Serie:
     def __str__(self):
         return f"ID: {self.id}\nTipo: {self.tipo}\nTitulo: {self.titulo}\nDescripcion: {self.descripcion}\nGenero: {self.genero}\nClasificacion: {self.clasificacion}"
 
+class mnabager:
+    def __init__(self):
+        self.peliculas = []
+        self.series = []
+
+    def agregar_pelicula(self, pelicula):
+        self.peliculas.append(pelicula)
+
+    def agregar_serie(self, serie):
+        self.series.append(serie)
+
+    def mostrar_peliculas(self):
+        for pelicula in self.peliculas:
+            print(pelicula)
+            print("--------------------")
+
+    def mostrar_series(self):
+        for serie in self.series:
+            print(serie)
+            print("--------------------")
+
+    def buscar_pelicula_por_nombre(self, nombre):
+        for pelicula in self.peliculas:
+            if pelicula.titulo.lower() == nombre.lower():
+                return pelicula
+        return None
+
+    def buscar_serie_por_nombre(self, nombre):
+        for serie in self.series:
+            if serie.titulo.lower() == nombre.lower():
+                return serie
+        return None
+
+
+
